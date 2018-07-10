@@ -1,4 +1,4 @@
-# mirror-mirror
+# mirror-mirror (refactored by inferno)
 Platform for sharing interview experiences.
 
 # Setting up your environment
