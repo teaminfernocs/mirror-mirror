@@ -34,7 +34,7 @@ export default class InterviewIndex extends Component {
       .catch((error) => {
         console.error({ error });
         console.error('Displaying sample data instead.');
-        this.setState({ list: [dummyDetail].map(deserializer) });
+        this.setState({ list: dummyDetail.map(deserializer) });
       });
   }
 
