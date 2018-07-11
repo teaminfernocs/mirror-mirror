@@ -11,6 +11,7 @@ import InterviewForm from './components/InterviewForm';
 import InterviewDetail from './components/InterviewDetail';
 import CompanyIndex from './components/CompanyIndex';
 import dummyDetail from './sampleInterview';
+import FirstTimeUser from  './components/FirstTimeUser';
 
 class App extends Component {
   render() {
@@ -33,6 +34,7 @@ class App extends Component {
             <Route exact path="/interviews" component={InterviewIndex} />
             <Route exact path="/interviews/new" component={InterviewForm} />
             <Route exact path="/companies" component={CompanyIndex} />
+            <Route exact path="/firsttimeuser" component={FirstTimeUser} />
             <Route
               path="/interviews/:id"
               render={props => (
