@@ -14,6 +14,7 @@ import dummyDetail from './sampleInterview';
 import FirstTimeUser from  './components/FirstTimeUser';
 import CompanyForm from './components/CompanyForm'
 import SearchBar from './components/SearchBar.jsx';
+import SearchResults from './components/SearchResults.jsx';
 
 class App extends Component {
   render() {
@@ -38,6 +39,8 @@ class App extends Component {
             
           </nav>
           <Switch>
+            <Route exact path="/searchresults" component={SearchResults} />
+
             <Route exact path="/interviews" component={InterviewIndex} />
             <Route exact path="/interviews/new" component={InterviewForm} />
             <Route exact path="/companies" component={CompanyIndex} />
