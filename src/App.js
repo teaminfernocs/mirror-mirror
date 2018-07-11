@@ -43,12 +43,9 @@ class App extends Component {
             <Link to="/interviews/new">Add an Interview</Link>
             <Link to="/companies">View All Companies</Link>
             <Link to="/companies/new">Add a Company</Link>
-            <Link to="/logout">
-              <Button variant="outlined" color="secondary">
+            <Button variant="outlined" color="secondary" href="/logout">
                 Log Out
-              </Button>
-            </Link>
-
+            </Button>
           </nav>
           <Switch>
             <Route exact path="/searchresults" component={SearchResults} />
@@ -57,7 +54,7 @@ class App extends Component {
             <Route exact path="/interviews/new" component={InterviewForm} />
             <Route exact path="/companies" component={CompanyIndex} />
             <Route exact path="/firsttimeuser" component={FirstTimeUser} />
-            <Route exact path="/companies/add" component={CompanyForm} />
+            <Route exact path="/companies/new" component={CompanyForm} />
             <Route
               path="/interviews/:id"
               render={props => (
