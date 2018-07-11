@@ -12,6 +12,7 @@ import InterviewDetail from './components/InterviewDetail';
 import CompanyIndex from './components/CompanyIndex';
 import dummyDetail from './sampleInterview';
 import FirstTimeUser from  './components/FirstTimeUser';
+import SearchBar from './components/SearchBar.jsx';
 
 class App extends Component {
   render() {
@@ -24,6 +25,9 @@ class App extends Component {
             <p style={{ marginBottom: '0.5em', fontSize: '0.9em' }} >
               <em>A Codesmith Interview Repository</em>
             </p>
+            <div>
+            <SearchBar/>
+            </div>
           </header>
           <nav>
             <Link to="/interviews">View All Interviews</Link>
