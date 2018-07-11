@@ -7,6 +7,7 @@ import OptionButtons from './OptionButtons';
 import ListField from './ListField';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import theme from '../theme';
+import SearchBar from './SearchBar.jsx';
 
 let questionCounter = 0;
 
@@ -35,6 +36,8 @@ export default class InterviewForm extends Component {
       question: '',
       questionList: [],
       date: new Date().toISOString().slice(0, 10),
+
+      searchField: '',
     };
 
     this.handleCompany = this.handleCompany.bind(this);
@@ -46,6 +49,8 @@ export default class InterviewForm extends Component {
     this.handleAddQuestion = this.handleAddQuestion.bind(this);
     this.handleRemoveQuestion = this.handleRemoveQuestion.bind(this);
     this.submitForm = this.submitForm.bind(this);
+
+    this.onSearchChange = this.onSearchChange.bind(this);
   }
 
   handleCompany(event) {
@@ -105,6 +110,11 @@ export default class InterviewForm extends Component {
       .then(console.log)
       .catch(console.error);
   }
+
+  onSearchChange(event) {
+        this.setState({searchField: event.target.value});
+  }
+
 
   render() {
     return (
@@ -178,7 +188,10 @@ export default class InterviewForm extends Component {
             color="primary"
           >
             Submit
-        </Button>
+          </Button>
+          <SearchBar
+            searchChange={this.onSearchChange}
+          />
         </form>
       </MuiThemeProvider >
     );
