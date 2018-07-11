@@ -2,26 +2,9 @@ import React, { Component} from 'react';
 import TextField from '@material-ui/core/TextField';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import theme from '../theme';
+import Button from '@material-ui/core/Button';
 
-
-const SearchBar = ({ searchField, searchChange }) => {
-	return (
-			<div className='search-bar'>
-			<input 
-					className='text-box'
-					type='search'
-					placeholder='Search questions'
-					value={searchField}
-					onChange={searchChange}
-					/>
-			</div>
-	)
-};
-
-export default SearchBar;
-
-
-class newSearchBar extends Component {
+export default class SearchBar extends Component {
 	constructor(props) {
 			super(props);
 			
@@ -30,7 +13,6 @@ class newSearchBar extends Component {
 			}
 			this.onSearchChange = this.onSearchChange.bind(this);
 	}
-
 	
 	onSearchChange(event) {
 		this.setState({searchField: event.target.value});
@@ -41,11 +23,17 @@ class newSearchBar extends Component {
 			<MuiThemeProvider theme={theme}>
 				<div className='search-bar'>
 					<TextField
-						label='Search Questions'
-						value={searchField}
+						label="Search"
+						value={this.state.searchField}
 						onChange={this.onSearchChange}
 						required
 					/>
+					<Button
+					color="primary"
+					variant="contained"
+					>
+					Submit
+					</Button>
 				</div>
 			</MuiThemeProvider>
 		)
