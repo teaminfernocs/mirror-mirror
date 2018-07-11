@@ -42,8 +42,7 @@ class App extends Component {
             <Link to="/interviews">View All Interviews</Link>
             <Link to="/interviews/new">Add an Interview</Link>
             <Link to="/companies">View All Companies</Link>
-
-            <Link to="/addcompany">Add a Company</Link>
+            <Link to="/companies/new">Add a Company</Link>
             <Link to="/logout">
               <Button variant="outlined" color="secondary">
                 Log Out
