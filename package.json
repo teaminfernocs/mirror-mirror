@@ -28,11 +28,15 @@
     "sequelize": "^4.38.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start --port=8080",
     "start:dev": "nodemon server/server.js",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev": "concurrently \"npm run start:dev\" \"npm start\""
   },
-  "proxy": "http://localhost:3000/"
+  "proxy": "http://localhost:3000/",
+  "devDependencies": {
+    "concurrently": "^3.6.0"
+  }
 }
