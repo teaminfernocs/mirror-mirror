@@ -10,6 +10,7 @@ import InterviewIndex from './components/InterviewIndex';
 import InterviewForm from './components/InterviewForm';
 import InterviewDetail from './components/InterviewDetail';
 import dummyDetail from './sampleInterview';
+import FirstTimeUser from  './components/FirstTimeUser';
 
 class App extends Component {
   render() {
@@ -30,6 +31,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/interviews" component={InterviewIndex} />
             <Route exact path="/interviews/new" component={InterviewForm} />
+            <Route exact path="/firsttimeuser" component={FirstTimeUser} />
             <Route
               path="/interviews/:id"
               render={props => (
