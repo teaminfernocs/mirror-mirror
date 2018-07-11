@@ -1,10 +1,8 @@
-const interview = require('./interview');
-const user = require('./users')
-const question = require('./questions');
+const interviews = require('./interviews');
+const companies = require('./companies');
 
 
 module.exports = {
-  interview,
-  user,
-  question
+  interviews,
+  companies
 };
