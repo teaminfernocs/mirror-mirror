@@ -1,0 +1,1 @@
+export default {company_name: 'Apple', company_website: 'www.apple.com', company_city:'Cupertino', company_state:'CA', company_country: 'USA'}
