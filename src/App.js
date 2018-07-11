@@ -13,12 +13,14 @@ import CompanyIndex from './components/CompanyIndex';
 import FirstTimeUser from  './components/FirstTimeUser';
 import CompanyForm from './components/CompanyForm'
 import SearchBar from './components/SearchBar.jsx';
+import SearchResults from './components/SearchResults.jsx';
 import Button from '@material-ui/core/Button';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import theme from './theme.js';
 import CompanyDetail from './components/CompanyDetail'
 import dummyDetail from './sampleInterview';
 import dummyCompany from './sampleCompany';
+
 
 class App extends Component {
   render() {
@@ -50,6 +52,8 @@ class App extends Component {
 
           </nav>
           <Switch>
+            <Route exact path="/searchresults" component={SearchResults} />
+
             <Route exact path="/interviews" component={InterviewIndex} />
             <Route exact path="/interviews/new" component={InterviewForm} />
             <Route exact path="/companies" component={CompanyIndex} />
