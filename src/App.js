@@ -9,6 +9,7 @@ import './App.css';
 import InterviewIndex from './components/InterviewIndex';
 import InterviewForm from './components/InterviewForm';
 import InterviewDetail from './components/InterviewDetail';
+import CompanyIndex from './components/CompanyIndex';
 import dummyDetail from './sampleInterview';
 
 class App extends Component {
@@ -26,10 +27,12 @@ class App extends Component {
           <nav>
             <Link to="/interviews">View All Interviews</Link>
             <Link to="/interviews/new">Add an Interview</Link>
+            <Link to="/companies">View All Companies</Link>
           </nav>
           <Switch>
             <Route exact path="/interviews" component={InterviewIndex} />
             <Route exact path="/interviews/new" component={InterviewForm} />
+            <Route exact path="/companies" component={CompanyIndex} />
             <Route
               path="/interviews/:id"
               render={props => (
