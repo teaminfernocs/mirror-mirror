@@ -11,7 +11,7 @@ const listStyles = {
 };
 
 
-export default class InterviewForm extends Component {
+export default class CompanyForm extends Component {
   constructor(props) {
     super(props);
 
