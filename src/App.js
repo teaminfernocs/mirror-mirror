@@ -13,6 +13,9 @@ import CompanyIndex from './components/CompanyIndex';
 import FirstTimeUser from  './components/FirstTimeUser';
 import CompanyForm from './components/CompanyForm'
 import SearchBar from './components/SearchBar.jsx';
+import Button from '@material-ui/core/Button';
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import theme from './theme.js';
 import CompanyDetail from './components/CompanyDetail'
 import dummyDetail from './sampleInterview';
 import dummyCompany from './sampleCompany';
@@ -21,6 +24,7 @@ class App extends Component {
   render() {
     return (
       <Router>
+      <MuiThemeProvider theme={theme}>
         <div className="App">
           <header className="App-header">
             <img src="/cs-logo.png" alt="Codesmith logo" />
@@ -36,8 +40,14 @@ class App extends Component {
             <Link to="/interviews">View All Interviews</Link>
             <Link to="/interviews/new">Add an Interview</Link>
             <Link to="/companies">View All Companies</Link>
-            <Link to="/companies/add">Add a Company</Link>
-            
+
+            <Link to="/addcompany">Add a Company</Link>
+            <Link to="/logout">
+              <Button variant="outlined" color="secondary">
+                Log Out
+              </Button>
+            </Link>
+
           </nav>
           <Switch>
             <Route exact path="/interviews" component={InterviewIndex} />
@@ -59,6 +69,7 @@ class App extends Component {
             />
           </Switch>
         </div>
+        </MuiThemeProvider>
       </Router>
     );
   }
