@@ -10,6 +10,7 @@ import theme from '../theme';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 
+
 const fakeCompanyQuery = [
   {id: 0, company_name: 'Google'},
   {id: 1, company_name: 'Apple'},
@@ -126,9 +127,12 @@ export default class InterviewForm extends Component {
               onChange={this.handleCompany}
               inputProps={{
                 name: 'company',
-                id: 'company',
+                id: 'companySelect',
               }}
             >
+            <MenuItem value="" disabled>
+              Company
+            </MenuItem>
               {
                 //should be this.state.allCompanies once db functionality is in place
                 fakeCompanyQuery.map((company) => (
