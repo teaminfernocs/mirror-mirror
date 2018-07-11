@@ -50,7 +50,7 @@ export default class CompanyIndex extends Component {
                   <TableCell>{item.company_state}</TableCell>
                   <TableCell>{item.company_country}</TableCell>
                   <TableCell>
-                    <Link to={`interviews/${idx}`}>
+                    <Link to={`companies/${idx}`}>
                       <Button variant="contained" color="primary">Go</Button>
                     </Link>
                   </TableCell>
