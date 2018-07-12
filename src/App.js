@@ -20,9 +20,21 @@ import theme from './theme.js';
 import CompanyDetail from './components/CompanyDetail'
 import dummyDetail from './sampleInterview';
 import dummyCompany from './sampleCompany';
+import axios from 'axios';
 
 
 class App extends Component {
+  
+  logOut() {
+    axios.get('/logout')
+    .then(function (response) {
+      console.log(response);
+     })
+    .catch(function (error) {
+      console.log(error);
+  });
+  }
+
   render() {
     return (
       <Router>
@@ -43,13 +55,12 @@ class App extends Component {
             <Link to="/interviews/new">Add an Interview</Link>
             <Link to="/companies">View All Companies</Link>
             <Link to="/companies/new">Add a Company</Link>
-            <Button variant="outlined" color="secondary" href="/logout">
+            <Button variant="outlined" color="secondary" onClick={this.logOut}>
                 Log Out
             </Button>
           </nav>
           <Switch>
             <Route exact path="/searchresults" component={SearchResults} />
-
             <Route exact path="/interviews" component={InterviewIndex} />
             <Route exact path="/interviews/new" component={InterviewForm} />
             <Route exact path="/companies" component={CompanyIndex} />
