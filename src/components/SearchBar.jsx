@@ -3,6 +3,7 @@ import TextField from '@material-ui/core/TextField';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import theme from '../theme';
 import Button from '@material-ui/core/Button';
+import axios from 'axios';
 
 export default class SearchBar extends Component {
 	constructor(props) {
@@ -12,10 +13,17 @@ export default class SearchBar extends Component {
 		searchField: '',
 	}
 		this.onSearchChange = this.onSearchChange.bind(this);
+		this.onSearchSubmit = this.onSearchSubmit.bind(this);
 	}
 
 	onSearchChange(event) {
 		this.setState({searchField: event.target.value});
+	}
+
+	onSearchSubmit() {
+		axios.post('/server', {query: this.state.field})
+			.then(res => console.log(res))
+			.catch(err => console.error(err))
 	}
 
 	render() {
@@ -31,6 +39,7 @@ export default class SearchBar extends Component {
 			<Button
 			color="primary"
 			variant="contained"
+			onClick={this.onSearchSubmit}
 			>
 			Submit
 			</Button>
